@@ -3,6 +3,7 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  */
+
 #include <stdbool.h>
 #include <sys/reent.h>
 #include "sdkconfig.h"
@@ -22,10 +23,11 @@ static int select_partition_number(bootloader_state_t *bs);
  * We do have a stack, so we can do the initialization in C.
  */
 void __attribute__((noreturn)) call_start_cpu0(void)
+
 {
     // 1. Hardware initialization
-    if (bootloader_init() != ESP_OK) {
-        bootloader_reset();
+    if ( bootloader_init() != ESP_OK ) {
+        bootloader_reset(); 
     }
 
 #ifdef CONFIG_BOOTLOADER_SKIP_VALIDATE_IN_DEEP_SLEEP
@@ -38,6 +40,7 @@ void __attribute__((noreturn)) call_start_cpu0(void)
 // logic for partition and cdi=hash(uds+bootloader code) check upi 
 
     // 2. Select the number of boot partition
+
     bootloader_state_t bs = {0};
     int boot_index = select_partition_number(&bs);
     if (boot_index == INVALID_INDEX) {
