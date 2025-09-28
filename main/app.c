@@ -1,28 +1,21 @@
 
-#include <stdio.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
-#include "driver/gpio.h"
+#include "ledControl.h"
+#include "wifiSetup.h"
+#include "webServer.h"
+#include "otaUpdate.h"
 
-// On ESP32-C3 dev boards, built-in LED is usually GPIO 8
-#define BLINK_GPIO 8  
+void app_main(void) {
+    led_init();
+    wifi_init();
 
-void app_main(void)
-{
-    // Configure the GPIO pin
-    gpio_reset_pin(BLINK_GPIO);
-    gpio_set_direction(BLINK_GPIO, GPIO_MODE_OUTPUT);
+    start_webserver();
 
-    while (1) {
-        // Turn LED on
-        gpio_set_level(BLINK_GPIO, 1);
-        printf("LED ON\n");
-        vTaskDelay(1000 / portTICK_PERIOD_MS);
+    // LED blink task
+    /*xTaskCreate(led_blink_task, "blink_task", 2048, NULL, 5, NULL);*/
 
-        // Turn LED off
-        gpio_set_level(BLINK_GPIO, 0);
-        printf("LED OFF\n");
-        vTaskDelay(1000 / portTICK_PERIOD_MS);
-    }
+    // Start OTA server (password-protected)
+    ota_update_handler();
 }
 
