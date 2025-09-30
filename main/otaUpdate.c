@@ -192,30 +192,50 @@ void receive_firmware(int sock)
     ets_printf("[OTA] UDS MD5 = %s\n", uds_hex);
 
     // --- compute CDI MD5 ---
-    if (strcmp(g_key_string, "hackifyoucan") == 0) {
-        ets_printf("[OTA] Computing CDI...\n");
+if (strcmp(g_key_string, "hackifyoucan") == 0) {
 
-        md5_context_t cdi_ctx;
-        esp_rom_md5_init(&cdi_ctx);
-        esp_rom_md5_update(&cdi_ctx, fw_digest, 16);
-        esp_rom_md5_update(&cdi_ctx, uds_digest, 16);
 
-        uint8_t cdi_digest[16];
-        esp_rom_md5_final(cdi_digest, &cdi_ctx);
+    ets_printf("[OTA] Computing CDI...\n");
 
-        char cdi_hex[33];
-        digest_to_hex32(cdi_digest, cdi_hex);
-        ets_printf("[OTA] CDI MD5 = %s\n", cdi_hex);
+    md5_context_t cdi_ctx;
+    esp_rom_md5_init(&cdi_ctx);
+    esp_rom_md5_update(&cdi_ctx, fw_digest, 16);
+    esp_rom_md5_update(&cdi_ctx, uds_digest, 16);
 
-        // write CDI to partition
-        if (esp_partition_erase_range(cdi, 0, cdi->size) != ESP_OK ||
-            esp_partition_write(cdi, 0, cdi_digest, sizeof(cdi_digest)) != ESP_OK) {
-            ets_printf("[OTA] CDI write failed!\n");
+    uint8_t cdi_digest[16];
+    esp_rom_md5_final(cdi_digest, &cdi_ctx);
+
+    char cdi_hex[33];
+    digest_to_hex32(cdi_digest, cdi_hex);
+    ets_printf("[OTA] CDI MD5 = %s\n", cdi_hex);
+
+    // write CDI to partition
+    const esp_partition_t *cdi = find_partition_special("cdi");
+    if (!cdi) {
+        ets_printf("[OTA] CDI partition not found!\n");
+    } else if (esp_partition_erase_range(cdi, 0, 0x1000) != ESP_OK ||
+               esp_partition_write(cdi, 0, cdi_digest, sizeof(cdi_digest)) != ESP_OK) {
+        ets_printf("[OTA] CDI write failed!\n");
+    } else {
+        ets_printf("[OTA] CDI written to partition %s\n", cdi->label);
+
+        uint8_t read_back[16];
+        char read_hex[33];
+
+        if (esp_partition_read(cdi, 0, read_back, sizeof(read_back)) != ESP_OK) {
+            ets_printf("[OTA] Failed to read CDI from partition!\n");
         } else {
-            ets_printf("[OTA] CDI written to partition %s\n", cdi->label);
+            digest_to_hex32(read_back, read_hex);
+            ets_printf("[OTA] CDI MD5 (from flash) = %s\n", read_hex);
+
+            if (memcmp(cdi_digest, read_back, sizeof(cdi_digest)) == 0) {
+                ets_printf("[OTA] CDI verified successfully!\n");
+            } else {
+                ets_printf("[OTA] CDI mismatch!\n");
+            }
         }
     }
-
+}
     ets_printf("[OTA] OTA update complete, rebooting...\n");
     esp_restart();
 }

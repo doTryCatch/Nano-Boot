@@ -1,5 +1,7 @@
 idf_component_register(SRCS "bootloader_start.c" "pre_boot_condition_checkup.c" "find_partition.c" "flash_reader.c" "banner.c" "handleUpload.c" "read_ota_flag.c"
-REQUIRES bootloader bootloader_support esp_partition esp_rom
+   INCLUDE_DIRS 
+        "." 
+REQUIRES bootloader bootloader_support esp_partition esp_rom spi_flash
 
 )
 
