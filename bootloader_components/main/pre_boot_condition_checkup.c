@@ -84,14 +84,25 @@ bool compute_partition_md5(const esp_partition_t *partition, uint8_t out_digest[
     return true;
 }
 // --------- Print MD5 as hex ---------
+
+// ------------------ Print MD5 as Hex ------------------
 void print_md5_hex(const uint8_t digest[16], const char *label)
 {
     static const char hex_chars[] = "0123456789abcdef";
     char md5_str[33];
-    ets_printf("✅ MD5 computed for partition %s\n", partition->label);
-    return true;
-}
 
+    for (int i = 0; i < 16; i++) {
+        md5_str[i * 2]     = hex_chars[(digest[i] >> 4) & 0xF];
+        md5_str[i * 2 + 1] = hex_chars[digest[i] & 0xF];
+    }
+    md5_str[32] = '\0';
+
+    if (label) {
+        ets_printf("🔹 %s MD5 (hex): %s\n", label, md5_str);
+    } else {
+        ets_printf("🔹 MD5 (hex): %s\n", md5_str);
+    }
+}
 // ------------------ Print MD5 as Hex ------------------
 char *get_md5_hex(const uint8_t digest[16], const char *label)
 {
@@ -111,11 +122,6 @@ char *get_md5_hex(const uint8_t digest[16], const char *label)
     }
 
     return md5_str;
-}
-
-void print_md5_hex(const uint8_t digest[16], const char *label)
-{
-    get_md5_hex(digest, label);  // Use the same function for consistency
 }
 
 bool read_uds_md5_raw(uint8_t out_digest[16])

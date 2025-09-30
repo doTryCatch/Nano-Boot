@@ -7,7 +7,7 @@ cmake_minimum_required(VERSION 3.16)
 include($ENV{IDF_PATH}/tools/cmake/project.cmake)
 # "Trim" the build. Include the minimal set of components, main, and anything it depends on.
 idf_build_set_property(MINIMAL_BUILD ON)
- Use your custom partition CSV
+#Use your custom partition CSV
 idf_build_set_property(PARTITION_TABLE_CUSTOM_FILENAME partitions.csv)
 idf_build_set_property(PARTITION_TABLE_CUSTOM yes)
 project(main)

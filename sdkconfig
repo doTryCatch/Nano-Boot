@@ -463,23 +463,14 @@ CONFIG_ESPTOOLPY_FLASHFREQ_80M=y
 # CONFIG_ESPTOOLPY_FLASHFREQ_20M is not set
 CONFIG_ESPTOOLPY_FLASHFREQ="80m"
 # CONFIG_ESPTOOLPY_FLASHSIZE_1MB is not set
-<<<<<<< HEAD
-CONFIG_ESPTOOLPY_FLASHSIZE_2MB=y
-# CONFIG_ESPTOOLPY_FLASHSIZE_4MB is not set
-=======
 # CONFIG_ESPTOOLPY_FLASHSIZE_2MB is not set
 CONFIG_ESPTOOLPY_FLASHSIZE_4MB=y
->>>>>>> 16ca650 (fixed: cdi comparision and validate authenticated upload)
 # CONFIG_ESPTOOLPY_FLASHSIZE_8MB is not set
 # CONFIG_ESPTOOLPY_FLASHSIZE_16MB is not set
 # CONFIG_ESPTOOLPY_FLASHSIZE_32MB is not set
 # CONFIG_ESPTOOLPY_FLASHSIZE_64MB is not set
 # CONFIG_ESPTOOLPY_FLASHSIZE_128MB is not set
-<<<<<<< HEAD
-CONFIG_ESPTOOLPY_FLASHSIZE="2MB"
-=======
 CONFIG_ESPTOOLPY_FLASHSIZE="4MB"
->>>>>>> 16ca650 (fixed: cdi comparision and validate authenticated upload)
 # CONFIG_ESPTOOLPY_HEADER_FLASHSIZE_UPDATE is not set
 CONFIG_ESPTOOLPY_BEFORE_RESET=y
 # CONFIG_ESPTOOLPY_BEFORE_NORESET is not set
@@ -565,8 +556,6 @@ CONFIG_EFUSE_MAX_BLK_LEN=256
 # end of eFuse Bit Manager
 
 #
-<<<<<<< HEAD
-=======
 # ESP-TLS
 #
 CONFIG_ESP_TLS_USING_MBEDTLS=y
@@ -589,7 +578,6 @@ CONFIG_ESP_COEX_ENABLED=y
 # end of Wireless Coexistence
 
 #
->>>>>>> 16ca650 (fixed: cdi comparision and validate authenticated upload)
 # Common ESP-related
 #
 CONFIG_ESP_ERR_TO_NAME_LOOKUP=y
@@ -602,8 +590,6 @@ CONFIG_ESP_ERR_TO_NAME_LOOKUP=y
 # end of ESP-Driver:GPIO Configurations
 
 #
-<<<<<<< HEAD
-=======
 # ESP-Driver:UART Configurations
 #
 # CONFIG_UART_ISR_IN_IRAM is not set
@@ -663,7 +649,6 @@ CONFIG_ESP_HTTPS_OTA_EVENT_POST_TIMEOUT=2000
 # end of ESP HTTPS OTA
 
 #
->>>>>>> 16ca650 (fixed: cdi comparision and validate authenticated upload)
 # Hardware Settings
 #
 
@@ -782,8 +767,6 @@ CONFIG_ESP_INTR_IN_IRAM=y
 # end of ESP-MM: Memory Management Configurations
 
 #
-<<<<<<< HEAD
-=======
 # ESP NETIF Adapter
 #
 CONFIG_ESP_NETIF_IP_LOST_TIMER_INTERVAL=120
@@ -799,14 +782,11 @@ CONFIG_ESP_NETIF_REPORT_DATA_TRAFFIC=y
 # end of ESP NETIF Adapter
 
 #
->>>>>>> 16ca650 (fixed: cdi comparision and validate authenticated upload)
 # Partition API Configuration
 #
 # end of Partition API Configuration
 
 #
-<<<<<<< HEAD
-=======
 # PHY
 #
 CONFIG_ESP_PHY_ENABLED=y
@@ -827,7 +807,6 @@ CONFIG_ESP_PHY_IRAM_OPT=y
 # end of PHY
 
 #
->>>>>>> 16ca650 (fixed: cdi comparision and validate authenticated upload)
 # Power Management
 #
 CONFIG_PM_SLEEP_FUNC_IN_IRAM=y
@@ -837,15 +816,12 @@ CONFIG_PM_POWER_DOWN_CPU_IN_LIGHT_SLEEP=y
 # end of Power Management
 
 #
-<<<<<<< HEAD
-=======
 # ESP Ringbuf
 #
 # CONFIG_RINGBUF_PLACE_FUNCTIONS_INTO_FLASH is not set
 # end of ESP Ringbuf
 
 #
->>>>>>> 16ca650 (fixed: cdi comparision and validate authenticated upload)
 # ESP-ROM
 #
 CONFIG_ESP_ROM_PRINT_IN_IRAM=y
@@ -937,8 +913,6 @@ CONFIG_ESP_TIMER_IMPL_SYSTIMER=y
 # end of ESP Timer (High Resolution Timer)
 
 #
-<<<<<<< HEAD
-=======
 # Wi-Fi
 #
 CONFIG_ESP_WIFI_ENABLED=y
@@ -1004,7 +978,6 @@ CONFIG_ESP_WIFI_ENTERPRISE_SUPPORT=y
 # end of Wi-Fi
 
 #
->>>>>>> 16ca650 (fixed: cdi comparision and validate authenticated upload)
 # FreeRTOS
 #
 
@@ -1154,8 +1127,6 @@ CONFIG_LOG_IN_IRAM=y
 # end of Log
 
 #
-<<<<<<< HEAD
-=======
 # LWIP
 #
 CONFIG_LWIP_ENABLE=y
@@ -1342,7 +1313,6 @@ CONFIG_LWIP_HOOK_IP6_INPUT_DEFAULT=y
 # end of LWIP
 
 #
->>>>>>> 16ca650 (fixed: cdi comparision and validate authenticated upload)
 # mbedTLS
 #
 CONFIG_MBEDTLS_INTERNAL_MEM_ALLOC=y
@@ -1378,11 +1348,7 @@ CONFIG_MBEDTLS_CERTIFICATE_BUNDLE_MAX_CERTS=200
 # end of Certificate Bundle
 
 # CONFIG_MBEDTLS_ECP_RESTARTABLE is not set
-<<<<<<< HEAD
-# CONFIG_MBEDTLS_CMAC_C is not set
-=======
 CONFIG_MBEDTLS_CMAC_C=y
->>>>>>> 16ca650 (fixed: cdi comparision and validate authenticated upload)
 CONFIG_MBEDTLS_HARDWARE_AES=y
 CONFIG_MBEDTLS_AES_USE_INTERRUPT=y
 CONFIG_MBEDTLS_AES_INTERRUPT_LEVEL=0
@@ -1480,10 +1446,7 @@ CONFIG_MBEDTLS_ECP_NIST_OPTIM=y
 # CONFIG_MBEDTLS_HKDF_C is not set
 # CONFIG_MBEDTLS_THREADING_C is not set
 CONFIG_MBEDTLS_ERROR_STRINGS=y
-<<<<<<< HEAD
-=======
 CONFIG_MBEDTLS_FS_IO=y
->>>>>>> 16ca650 (fixed: cdi comparision and validate authenticated upload)
 # CONFIG_MBEDTLS_ALLOW_WEAK_CERTIFICATE_VERIFICATION is not set
 # end of mbedTLS
 
@@ -1493,15 +1456,12 @@ CONFIG_MBEDTLS_FS_IO=y
 CONFIG_LIBC_NEWLIB=y
 CONFIG_LIBC_MISC_IN_IRAM=y
 CONFIG_LIBC_LOCKS_PLACE_IN_IRAM=y
-<<<<<<< HEAD
-=======
 CONFIG_LIBC_STDOUT_LINE_ENDING_CRLF=y
 # CONFIG_LIBC_STDOUT_LINE_ENDING_LF is not set
 # CONFIG_LIBC_STDOUT_LINE_ENDING_CR is not set
 # CONFIG_LIBC_STDIN_LINE_ENDING_CRLF is not set
 # CONFIG_LIBC_STDIN_LINE_ENDING_LF is not set
 CONFIG_LIBC_STDIN_LINE_ENDING_CR=y
->>>>>>> 16ca650 (fixed: cdi comparision and validate authenticated upload)
 # CONFIG_LIBC_NEWLIB_NANO_FORMAT is not set
 CONFIG_LIBC_TIME_SYSCALL_USE_RTC_HRT=y
 # CONFIG_LIBC_TIME_SYSCALL_USE_RTC is not set
@@ -1511,8 +1471,6 @@ CONFIG_LIBC_TIME_SYSCALL_USE_RTC_HRT=y
 # end of LibC
 
 #
-<<<<<<< HEAD
-=======
 # NVS
 #
 # CONFIG_NVS_ENCRYPTION is not set
@@ -1521,7 +1479,6 @@ CONFIG_LIBC_TIME_SYSCALL_USE_RTC_HRT=y
 # end of NVS
 
 #
->>>>>>> 16ca650 (fixed: cdi comparision and validate authenticated upload)
 # PThreads
 #
 CONFIG_PTHREAD_TASK_PRIO_DEFAULT=5
@@ -1606,12 +1563,6 @@ CONFIG_SPI_FLASH_ENABLE_ENCRYPTED_READ_WRITE=y
 # end of SPI Flash driver
 
 #
-<<<<<<< HEAD
-# Bootloader welcome message
-#
-CONFIG_EXAMPLE_BOOTLOADER_WELCOME_MESSAGE="Custom bootloader message defined in the KConfig file."
-# end of Bootloader welcome message
-=======
 # TCP Transport
 #
 
@@ -1649,7 +1600,6 @@ CONFIG_VFS_INITIALIZE_DEV_NULL=y
 #
 CONFIG_EXAMPLE_BOOTLOADER_WELCOME_MESSAGE="🚀 Welcome to the Ultimate ESP32 Bootloader! 🚀"
 # end of Bootloader Welcome Message
->>>>>>> 16ca650 (fixed: cdi comparision and validate authenticated upload)
 # end of Component config
 
 # CONFIG_IDF_EXPERIMENTAL_FEATURES is not set
@@ -1686,15 +1636,12 @@ CONFIG_STACK_CHECK_NONE=y
 # CONFIG_STACK_CHECK_STRONG is not set
 # CONFIG_STACK_CHECK_ALL is not set
 # CONFIG_WARN_WRITE_STRINGS is not set
-<<<<<<< HEAD
-=======
 # CONFIG_EXTERNAL_COEX_ENABLE is not set
 # CONFIG_ESP_WIFI_EXTERNAL_COEXIST_ENABLE is not set
 # CONFIG_EVENT_LOOP_PROFILING is not set
 CONFIG_POST_EVENTS_FROM_ISR=y
 CONFIG_POST_EVENTS_FROM_IRAM_ISR=y
 # CONFIG_OTA_ALLOW_HTTP is not set
->>>>>>> 16ca650 (fixed: cdi comparision and validate authenticated upload)
 # CONFIG_ESP_SYSTEM_PD_FLASH is not set
 CONFIG_ESP32C3_LIGHTSLEEP_GPIO_RESET_WORKAROUND=y
 CONFIG_ESP32C3_RTC_CLK_SRC_INT_RC=y
@@ -1720,15 +1667,12 @@ CONFIG_ESP32C3_BROWNOUT_DET_LVL_SEL_7=y
 CONFIG_BROWNOUT_DET_LVL=7
 CONFIG_ESP32C3_BROWNOUT_DET_LVL=7
 CONFIG_ESP_SYSTEM_BROWNOUT_INTR=y
-<<<<<<< HEAD
-=======
 CONFIG_ESP32_PHY_CALIBRATION_AND_DATA_STORAGE=y
 # CONFIG_ESP32_PHY_INIT_DATA_IN_PARTITION is not set
 CONFIG_ESP32_PHY_MAX_WIFI_TX_POWER=20
 CONFIG_ESP32_PHY_MAX_TX_POWER=20
 # CONFIG_REDUCE_PHY_TX_POWER is not set
 # CONFIG_ESP32_REDUCE_PHY_TX_POWER is not set
->>>>>>> 16ca650 (fixed: cdi comparision and validate authenticated upload)
 CONFIG_ESP_SYSTEM_PM_POWER_DOWN_CPU=y
 # CONFIG_ESP32C3_DEFAULT_CPU_FREQ_80 is not set
 CONFIG_ESP32C3_DEFAULT_CPU_FREQ_160=y
@@ -1756,8 +1700,6 @@ CONFIG_TASK_WDT_CHECK_IDLE_TASK_CPU0=y
 CONFIG_ESP32C3_DEBUG_OCDAWARE=y
 CONFIG_IPC_TASK_STACK_SIZE=1024
 CONFIG_TIMER_TASK_STACK_SIZE=3584
-<<<<<<< HEAD
-=======
 CONFIG_ESP32_WIFI_ENABLED=y
 CONFIG_ESP32_WIFI_STATIC_RX_BUFFER_NUM=10
 CONFIG_ESP32_WIFI_DYNAMIC_RX_BUFFER_NUM=32
@@ -1789,14 +1731,11 @@ CONFIG_WPA_MBEDTLS_TLS_CLIENT=y
 # CONFIG_WPA_WPS_STRICT is not set
 # CONFIG_WPA_DEBUG_PRINT is not set
 # CONFIG_WPA_TESTING_OPTIONS is not set
->>>>>>> 16ca650 (fixed: cdi comparision and validate authenticated upload)
 CONFIG_TIMER_TASK_PRIORITY=1
 CONFIG_TIMER_TASK_STACK_DEPTH=2048
 CONFIG_TIMER_QUEUE_LENGTH=10
 # CONFIG_ENABLE_STATIC_TASK_CLEAN_UP_HOOK is not set
 # CONFIG_HAL_ASSERTION_SILIENT is not set
-<<<<<<< HEAD
-=======
 # CONFIG_L2_TO_L3_COPY is not set
 CONFIG_ESP_GRATUITOUS_ARP=y
 CONFIG_GARP_TMR_INTERVAL=60
@@ -1824,7 +1763,6 @@ CONFIG_NEWLIB_STDOUT_LINE_ENDING_CRLF=y
 # CONFIG_NEWLIB_STDIN_LINE_ENDING_CRLF is not set
 # CONFIG_NEWLIB_STDIN_LINE_ENDING_LF is not set
 CONFIG_NEWLIB_STDIN_LINE_ENDING_CR=y
->>>>>>> 16ca650 (fixed: cdi comparision and validate authenticated upload)
 # CONFIG_NEWLIB_NANO_FORMAT is not set
 CONFIG_NEWLIB_TIME_SYSCALL_USE_RTC_HRT=y
 CONFIG_ESP32C3_TIME_SYSCALL_USE_RTC_SYSTIMER=y
@@ -1842,10 +1780,7 @@ CONFIG_ESP32_PTHREAD_TASK_NAME_DEFAULT="pthread"
 CONFIG_SPI_FLASH_WRITING_DANGEROUS_REGIONS_ABORTS=y
 # CONFIG_SPI_FLASH_WRITING_DANGEROUS_REGIONS_FAILS is not set
 # CONFIG_SPI_FLASH_WRITING_DANGEROUS_REGIONS_ALLOWED is not set
-<<<<<<< HEAD
-=======
 CONFIG_SUPPRESS_SELECT_DEBUG_OUTPUT=y
 CONFIG_SUPPORT_TERMIOS=y
 CONFIG_SEMIHOSTFS_MAX_MOUNT_POINTS=1
->>>>>>> 16ca650 (fixed: cdi comparision and validate authenticated upload)
 # End of deprecated options
